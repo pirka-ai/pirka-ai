@@ -19,7 +19,7 @@ kanto kor pirka nociw AI system(以下、本ソフト)をお使いになられ�
 
 ## 本ソフトの仕様
 * 名称：kanto kor pirka nociw AI system
-* バージョン：α0.0.0.1a
+* バージョン：α0.0.0.2a
 * 使用言語：Python3
 
 ## セットアップ
@@ -43,6 +43,7 @@ $ python3 main.py
 では、pirkaとの会話を楽しんでください。
 
 ## アップデート記録
+* α0.0.0.2a 幾つかの語彙をnociwに追加
 * α0.0.0.1a テンプレート学習機能追加
 * α0.0.0.0a 公開
 
