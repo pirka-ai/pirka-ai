@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #feelings.py:４つの感情を計算し出力
 #感情は魂の言語だ。 -ニール・ドナルド・ウォルシュ
 #©2019 Mamoru Itoi

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #gui.py:GUIを生成
 #もし今日が人生最後の日なら、やろうとしていることは本当に自分のやりたいことだろうか？-スティーブ・ジョブズ
 #©2019 Mamoru Itoi

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #switch.py:appsかresponseか決める
 #©2019 Mamoru Itoi
 

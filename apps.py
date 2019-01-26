@@ -1,5 +1,5 @@
 #!/usr/bon/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #apps.py:各種機能
 #ハングリーであれ。愚かであれ。-スティーブ・ジョブズ
 #©2019 Mamoru Itoi

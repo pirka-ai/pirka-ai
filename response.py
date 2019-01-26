@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #response.py:会話の応答の生成
 #稼ぐために学んではいけない。学ぶために学べ。-ビル・ゲイツ
 #©2019 Mamoru Itoi
@@ -133,8 +133,6 @@ def make():
 					response = random.choice(adj[1]).replace("%pat%", surface)
 			elif part == "名詞" and typeOfPart == "形容動詞語幹":
 				response = random.choice(adjVerb[1]).replace("%pat%", surface)
-	print(learn.did)
-	print(learn.notFound)
 	#もし、常識学習が行われたら
 	if learn.did == True:
 		if learn.notFound == True:

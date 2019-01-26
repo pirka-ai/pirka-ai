@@ -1,4 +1,4 @@
-# License of kanto kor pirka nociw AI system α0.0.0.0a
+# License of kanto kor pirka nociw AI system
 「kanto kor pirka nociw AI system α0.0.0.0a(以下、本ソフトウェア)」のライセンスは次の通りとします。
 * 本ソフトウェアを営利目的で使用、公開することを禁止します。
 * 本ソフトウェアを改変して公開することを禁止します。

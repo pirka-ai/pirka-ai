@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #learn.py:応答の学習
 #学習:経験を通じて行動に持続的な変化が生じる、ないし行動パターンが変化する現象のこと。 -Wikipedia
 #©2019 Mamoru Itoi
@@ -25,22 +25,22 @@ end = None
 #メイン処理
 def main():
 	withdrawn()
-	#makeNounTemp()
-	#makeProperNounTemp()
-#	makeNumberNounTemp()
-	#makeProNounTemp()
-	#makeVerbTemp()
-	#makeVerbMizenTemp()
-	#makeVerbRennyoTemp()
-	#makeVerbRentaiTemp()
-	#makeVerbKateiTemp()
-	#makeVerbMeireiTemp()
-	#makeAdjTemp()
-	#makeAdjMizenTemp()
-	#makeAdjRennyoTemp()
-	#makeAdjRentaiTemp()
-	#makeAdjKateiTemp()
-	#makeAdjVerbTemp()
+	makeNounTemp()
+	makeProperNounTemp()
+	makeNumberNounTemp()
+	makeProNounTemp()
+	makeVerbTemp()
+	makeVerbMizenTemp()
+	makeVerbRennyoTemp()
+	makeVerbRentaiTemp()
+	makeVerbKateiTemp()
+	makeVerbMeireiTemp()
+	makeAdjTemp()
+	makeAdjMizenTemp()
+	makeAdjRennyoTemp()
+	makeAdjRentaiTemp()
+	makeAdjKateiTemp()
+	makeAdjVerbTemp()
 	commonSense()
 	
 #起動時に実行
@@ -480,7 +480,6 @@ def commonSense():
 					for type2 in definition[type1]:
 							if not type2 in value:
 								value.append(type2)
-	print(definition)
 
 #活用がある単語を入力すると、その単語の活用を返す
 def inflections(word):

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#kanto kor pirka nociw AI system α0.0.0.0a source code
+#kanto kor pirka nociw AI system
 #analyzer.py:MeCabによる形態素解析を行う
 #単純であることは、究極の洗練だ。 -レオナルド・ダ・ヴィンチ
 #©2019 Mamoru Itoi
