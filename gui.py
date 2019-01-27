@@ -145,7 +145,7 @@ class Pirka(QWidget):
 			#ログを表示
 			diff = "In[" + str(count) + "] " + User.username + ":\n" + text + "\n" + "Out[" + str(count) + "] " + "pirka:\n" + response.response + "\n\n"
 			nowLog = diff + nowLog
-			self.responselbl.setText(nowLog)
+			self.responselbl.setText(nowLog )
 			self.show()
 			
 app = QApplication(sys.argv)

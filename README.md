@@ -19,19 +19,19 @@ kanto kor pirka nociw AI system(以下、本ソフト)をお使いになられ�
 
 ## 本ソフトの仕様
 * 名称：kanto kor pirka nociw AI system
-* バージョン：α0.0.0.2e
+* バージョン：α0.0.0.2f
 * 使用言語：Python3
 
 ## セットアップ
-ダウンロードしたら、以下のライブラリをインストールしてください。Windowsでのmecab-pythonのインストールは複雑であるため、恐縮ですがご調べの上でインストールをお願いします。近日中に解決予定です。
-* PyQt5/SIP
-* MeCab
-* mecab-python3
-* matplotlib
-* numpy
-* beautifulsoup4
-* requests
+ダウンロードしたら、以下のライブラリをインストールしてください。Windowsでのインストールは複雑であるため、恐縮ですが割愛します。近日中に解決予定です。
+以下はmacOSでのインストール手順です。
 
+```console:
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	#途中で止まるので、returnキーを押してからパスワードを入力して、再度returnキーを押してください。
+$ brew install pyqt5 swig mecab mecab-ipadic 
+$ pip3 install numpy matplotlib beautifulsoup4 requests mecab-python3
+```
 ## 使い方
 ダウンロードしたディレクトリまで移動し、
 
@@ -44,6 +44,7 @@ $ python3 main.py
 では、pirkaとの会話を楽しんでください。
 
 ## アップデート記録
+* α0.0.0.2f インストール方法を明記
 * α0.0.0.2e コメントを追加
 * α0.0.0.2d 色々明記
 * α0.0.0.2c Windowsでのmecab-python問題を明記
