@@ -55,24 +55,24 @@ class Pirka(QWidget):
 		self.setMinimumHeight(self.height)
 		self.setMinimumWidth(self.width)
 		#入力欄
-		self.textbox = QLineEdit(self)
-		self.textbox.move(5, 560)
-		self.textbox.resize(350,30)
-		self.textbox.setStyleSheet("color: darkcyan;")
+		self.textBox = QLineEdit(self)
+		self.textBox.move(5, 560)
+		self.textBox.resize(350,30)
+		self.textBox.setStyleSheet("color: darkcyan;")
 		#ログ領域
-		self.responselbl = QTextEdit(self)
-		self.responselbl.move(505, 10)
-		self.responselbl.resize(460, 580)
-		self.responselbl.setStyleSheet("color: darkcyan;")
-		self.responselbl.setText(nowLog)
+		self.responseLabel = QTextEdit(self)
+		self.responseLabel.move(505, 10)
+		self.responseLabel.resize(460, 580)
+		self.responseLabel.setStyleSheet("color: darkcyan;")
+		self.responseLabel.setText(nowLog)
 		#送信ボタン
 		self.sendButton = QPushButton("送信", self)
 		self.sendButton.move(380,560)
 		self.sendButton.clicked.connect(self.sendButtonClick)
 		#顔
 		self.face = QLabel(self)
-		self.faceimg = QPixmap("img/zero.jpg")
-		self.face.setPixmap(self.faceimg)
+		self.faceImg = QPixmap("img/zero.jpg")
+		self.face.setPixmap(self.faceImg)
 		self.face.move(10, 5)
 		self.face.resize(460, 300)
 		#グラフ
@@ -88,7 +88,7 @@ class Pirka(QWidget):
 	def sendButtonClick(self):
 		global text
 		global nowLog
-		text = self.textbox.text()
+		text = self.textBox.text()
 		#終了処理
 		if text == "":
 			Log.log += nowLog
@@ -123,7 +123,7 @@ class Pirka(QWidget):
 			else:
 				self.pixmap = QPixmap('img/zero.jpg')
 				self.face.setPixmap(self.pixmap)
-			self.textbox.setText("")
+			self.textBox.setText("")
 			#感情グラフを表示
 			global count
 			count += 1
@@ -142,12 +142,12 @@ class Pirka(QWidget):
 			plt.plot(flist[2], "r")
 			plt.plot(flist[3], "y")
 			plt.savefig("img/graph.png", figsize=(9, 6), dpi=50)
-			self.graphimg = QPixmap("img/graph.png")
-			self.graph.setPixmap(self.graphimg)
+			self.graphImg = QPixmap("img/graph.png")
+			self.graph.setPixmap(self.graphImg)
 			#ログを表示
 			diff = "In[" + str(count) + "] " + User.username + ":\n" + text + "\n" + "Out[" + str(count) + "] " + "pirka:\n" + response.response + "\n\n"
 			nowLog = diff + nowLog
-			self.responselbl.setText(nowLog )
+			self.responseLabel.setText(nowLog)
 			self.show()
 			
 app = QApplication(sys.argv)
