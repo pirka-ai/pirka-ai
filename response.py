@@ -108,29 +108,29 @@ def make():
 				elif inflection == "代名詞":
 					response = random.choice(proNoun[1]).replace("%pat%", surface)
 			elif part == "動詞":
-				if inflection == "未然形":
-					response = random.choice(verbMizen[1]).replace("%pat%", surface)
-				elif inflection == "連用形":
-					response = random.choice(verbRennyo[1]).replace("%pat%", surface)
-				elif inflection == "連体形":
-					response = random.choice(verbRentai[1]).replace("%pat%", surface)
-				elif inflection == "仮定形":
+				#if inflection == "未然形":
+					#response = random.choice(verbMizen[1]).replace("%pat%", surface)
+				#elif inflection == "連用形":
+					#response = random.choice(verbRennyo[1]).replace("%pat%", surface)
+				#elif inflection == "連体形":
+					#response = random.choice(verbRentai[1]).replace("%pat%", surface)
+				if inflection == "仮定形":
 					response = random.choice(verbKatei[1]).replace("%pat%", surface)
-				elif inflection == "命令形":
-					response = random.choice(verbMeirei[1]).replace("%pat%", surface)
+				#elif inflection == "命令形":
+					#response = random.choice(verbMeirei[1]).replace("%pat%", surface)
 				else:
 					response = random.choice(verb[1]).replace("%pat%", surface)
 			elif part == "形容詞":
-				if inflection == "未然形":
-					response = random.choice(adjMizen[1]).replace("%pat%", surface)
-				elif inflection == "連用形":
-					response = random.choice(adjRennyo[1]).replace("%pat%", surface)
-				elif inflection == "連体形":
-					response = random.choice(adjRentai[1]).replace("%pat%", surface)
-				elif inflection == "仮定形":
-					response = random.choice(adjKatei[1]).replace("%pat%", surface)
-				else:
-					response = random.choice(adj[1]).replace("%pat%", surface)
+				#if inflection == "未然形":
+					#response = random.choice(adjMizen[1]).replace("%pat%", surface)
+				#elif inflection == "連用形":
+					#response = random.choice(adjRennyo[1]).replace("%pat%", surface)
+				#elif inflection == "連体形":
+					#response = random.choice(adjRentai[1]).replace("%pat%", surface)
+				#elif inflection == "仮定形":
+					#response = random.choice(adjKatei[1]).replace("%pat%", surface)
+				#else:
+				response = random.choice(adj[1]).replace("%pat%", surface)
 			elif part == "名詞" and typeOfPart == "形容動詞語幹":
 				response = random.choice(adjVerb[1]).replace("%pat%", surface)
 	#もし、常識学習が行われたら
