@@ -471,16 +471,19 @@ def commonSense():
 		for v in definition[key]:
 			if v == value:
 				notFound = False
-		if notFound:
+		if notFound and key != "" and value != "":
 			definition[key].append(value)
 		#三段論法
 		for key, value in definition.items():
 			for type1 in value:
-				if type1 in definition:
+				try:
 					for type2 in definition[type1]:
 							if not type2 in value:
 								value.append(type2)
-
+				except KeyError:
+					pass
+		print(definition)
+				
 #活用がある単語を入力すると、その単語の活用を返す
 def inflections(word):
 	#形態素解析
