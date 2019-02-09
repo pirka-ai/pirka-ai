@@ -58,12 +58,12 @@ class Pirka(QWidget):
 		self.textBox = QLineEdit(self)
 		self.textBox.move(5, 560)
 		self.textBox.resize(350,30)
-		self.textBox.setStyleSheet("color: darkcyan;")
+		self.textBox.setStyleSheet("color: lightseagreen;")
 		#ログ領域
 		self.responseLabel = QTextEdit(self)
 		self.responseLabel.move(505, 10)
 		self.responseLabel.resize(460, 580)
-		self.responseLabel.setStyleSheet("color: darkcyan;")
+		self.responseLabel.setStyleSheet("color: lightseagreen;")
 		self.responseLabel.setText(nowLog)
 		#送信ボタン
 		self.sendButton = QPushButton("送信", self)
