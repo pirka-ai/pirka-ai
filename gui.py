@@ -110,10 +110,10 @@ class Pirka(QWidget):
 			else:
 				apps.main(s)
 			#感情により顔を変える
-			joy = feelings.joy
-			trust = feelings.trust
-			fear = feelings.fear
-			surprise = feelings.surprise
+			joy = feelings.nowFeelings[0]
+			trust = feelings.nowFeelings[1]
+			fear = feelings.nowFeelings[2]
+			surprise = feelings.nowFeelings[3]
 			if joy > 0.2:
 				self.pixmap = QPixmap('img/plus.jpg')
 				self.face.setPixmap(self.pixmap)
@@ -127,20 +127,20 @@ class Pirka(QWidget):
 			#感情グラフを表示
 			global count
 			count += 1
-			flist = feelings.flist
-			flist[0].append(joy)
-			flist[1].append(trust)
-			flist[2].append(fear)
-			flist[3].append(surprise)
-			if len(flist[0]) > 10:
+			allFeelings = feelings.allFeelings
+			allFeelings[0].append(joy)
+			allFeelings[1].append(trust)
+			allFeelings[2].append(fear)
+			allFeelings[3].append(surprise)
+			if len(allFeelings[0]) > 10:
 				plt.xlim([count - 9, count + 1])
 			else:
 				plt.xlim([0, 10])
 			plt.ylim([-1, 1])
-			plt.plot(flist[0], "b")
-			plt.plot(flist[1], "g")
-			plt.plot(flist[2], "r")
-			plt.plot(flist[3], "y")
+			plt.plot(allFeelings[0], "b")
+			plt.plot(allFeelings[1], "g")
+			plt.plot(allFeelings[2], "r")
+			plt.plot(allFeelings[3], "y")
 			plt.savefig("img/graph.png", figsize=(9, 6), dpi=50)
 			self.graphImg = QPixmap("img/graph.png")
 			self.graph.setPixmap(self.graphImg)

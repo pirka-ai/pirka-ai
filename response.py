@@ -25,10 +25,10 @@ def main():
 	
 #応答生成処理
 def make():
-	joy = feelings.joy
-	trust = feelings.trust
-	fear = feelings.fear
-	surprise = feelings.surprise
+	joy = feelings.nowFeelings[0]
+	trust = feelings.nowFeelings[1]
+	fear = feelings.nowFeelings[2]
+	surprise = feelings.nowFeelings[3]
 	global response
 	response = ""
 	#応答候補リスト
@@ -57,7 +57,7 @@ def make():
 		i = -1
 		for item in candidate:
 			i += 1
-			#今の感情と、kantoに指定されている感情値の差を計算。
+			#今の感情と、kantoに指定されている感情値の差を計算
 			nowdiff = abs(item[1] - joy) + abs(item[2] - trust) + abs(item[3] - fear) + abs(item[4] - surprise)
 			if nowdiff < diff:
 				#今の感情と指定されている感情の差が最も小さい候補を応答にする
@@ -137,8 +137,8 @@ def make():
 	if learn.did == True:
 		if learn.notFound == True:
 			response = "へえ〜！知らなかった！"
-			feelings.surprise += 0.25
+			surprise += 0.25
 		#もし今までにある常識だったら
 		else:
 			response = "知ってるよ。"
-			feelings.surprise -= 0.25
+			surprise -= 0.25

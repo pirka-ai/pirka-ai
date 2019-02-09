@@ -20,7 +20,6 @@ did = None
 notFound = None
 
 start = None
-end = None
 
 #メイン処理
 def main():
@@ -478,7 +477,7 @@ def commonSense():
 			for type1 in value:
 				try:
 					for type2 in definition[type1]:
-							if not type2 in value:
+							if not type2 in value and key != "" and value != "":
 								value.append(type2)
 				except KeyError:
 					pass
@@ -620,8 +619,8 @@ def timerStart():
 	start = time.time()
 
 def timerEnd():
-	global end
 	end = time.time()
+	print(end - start)
 	return end - start
 	
 #終了時に実行

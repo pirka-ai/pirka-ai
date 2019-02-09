@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #kanto kor pirka nociw AI system
-#feelings.py:４つの感情を計算し出力
+#feelings.py:4つの感情を計算し出力
 #感情は魂の言語だ。 -ニール・ドナルド・ウォルシュ
 #©2019 Mamoru Itoi
 
@@ -13,11 +13,8 @@ import analyzer
 from data import *
 
 match = None
-joy = 0
-trust = 0
-fear = 0
-surprise = 0
-flist = [[], [], [], []]
+nowFeelings = [0, 0, 0, 0]
+allFeelings = [[], [], [], []]
 
 #メイン
 def main():
@@ -25,24 +22,10 @@ def main():
 	adjustment()
 	decay()
 	rounding()
-	
-#初期化
-def start():
-	global joy
-	global trust
-	global fear
-	global surprise
-	joy = 0
-	trust = 0
-	fear = 0
-	surprise = 0
-	
+
 #感情変動
 def move():
-	global joy
-	global trust
-	global fear
-	global surprise
+	global nowFeelings
 	tokens = analyzer.tokens
 	nociwTokens = []
 	#感情変動用辞書「nociw」を開く
@@ -83,72 +66,63 @@ def move():
 			tot += item[1]
 			fot += item[2]
 			sot += item[3]
-		joy += jot
-		trust += tot
-		fear += fot
-		surprise += sot
+		nowFeelings[0] += jot
+		nowFeelings[1] += tot
+		nowFeelings[2] += fot
+		nowFeelings[3] += sot
 	
 #常に-1.00から1.00の間になるように調整
 def adjustment():
-	global joy
-	global trust
-	global fear
-	global surprise
-	if joy > 1.00:
-		joy = 1.00
-	if joy < -1.00:
-		joy = -1.00
-	if trust > 1.00:
-		trust = 1.00
-	if trust < -1.00:
-		trust = -1.00
-	if fear > 1.00:
-		fear = 1.00
-	if fear < -1.00:
-		fear = -1.00
-	if surprise > 1.00:
-		surprise = 1.00
-	if surprise < -1.00:
-		surprise = -1.00
+	global nowFeelings
+	if nowFeelings[0] > 1.00:
+		nowFeelings[0] = 1.00
+	if nowFeelings[0] < -1.00:
+		nowFeelings[0] = -1.00
+	if nowFeelings[1] > 1.00:
+		nowFeelings[1] = 1.00
+	if nowFeelings[1] < -1.00:
+		nowFeelings[1] = -1.00
+	if nowFeelings[2] > 1.00:
+		nowFeelings[2] = 1.00
+	if nowFeelings[2] < -1.00:
+		nowFeelings[2] = -1.00
+	if nowFeelings[3] > 1.00:
+		nowFeelings[3] = 1.00
+	if nowFeelings[3] < -1.00:
+		nowFeelings[3] = -1.00
 		
 #感情を和らげ、0.00に戻していく
 def decay():
-	global joy
-	global trust
-	global fear
-	global surprise
+	global nowFeelings
 	if not match:
-		if joy > 0.00:
-			joy -= 0.02
-		if joy < 0.00:
-			joy += 0.02
-		if trust > 0.00:
-			trust -= 0.02
-		if trust < 0.00:
-			trust += 0.02
-		if fear > 0.00:
-			fear -= 0.02
-		if fear < 0.00:
-			fear += 0.02
-		if surprise > 0.00:
-			surprise -= 0.02
-		if surprise < 0.00:
-			surprise += 0.02
+		if nowFeelings[0] > 0.00:
+			nowFeelings[0] -= 0.02
+		if nowFeelings[0] < 0.00:
+			nowFeelings[0] += 0.02
+		if nowFeelings[1] > 0.00:
+			nowFeelings[1] -= 0.02
+		if nowFeelings[1] < 0.00:
+			nowFeelings[1] += 0.02
+		if nowFeelings[2] > 0.00:
+			nowFeelings[2] -= 0.02
+		if nowFeelings[2] < 0.00:
+			nowFeelings[2] += 0.02
+		if nowFeelings[3] > 0.00:
+			nowFeelings[3] -= 0.02
+		if nowFeelings[3] < 0.00:
+			nowFeelings[3] += 0.02
 		
 #小数点以下2桁までに丸める	
 def rounding():
-	global joy
-	global trust
-	global fear
-	global surprise
-	joy = round(joy, 2)
-	trust = round(trust, 2)
-	fear = round(fear, 2)
-	surprise = round(surprise, 2)
+	global nowFeelings
+	nowFeelings[0] = round(nowFeelings[0], 2)
+	nowFeelings[1] = round(nowFeelings[1], 2)
+	nowFeelings[2] = round(nowFeelings[2], 2)
+	nowFeelings[3] = round(nowFeelings[3], 2)
 		
 #感情を表示
 def display():
-	print(joy)
-	print(trust)
-	print(fear)
-	print(surprise)
+	print(nowFeelings[0])
+	print(nowFeelings[1])
+	print(nowFeelings[2])
+	print(nowFeelings[3])
