@@ -486,7 +486,7 @@ def commonSense():
 #活用がある単語を入力すると、その単語の活用を返す
 def inflections(word):
 	#形態素解析
-	tokens = analyzer.main(word)
+	tokens = analyzer.tokenizer(word)
 	#抜き出し
 	token = tokens[1]
 	#見出し

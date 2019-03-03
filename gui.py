@@ -24,7 +24,7 @@ import switch
 from data import *
 
 count = 0
-nowLog = """kanto kor pirka nociw AI system α0.0.0.0a\n\n"""
+nowLog = """kanto kor pirka nociw AI system\n\n"""
 text = None
 
 class Pirka(QWidget):
@@ -99,7 +99,7 @@ class Pirka(QWidget):
 			quit()
 		#メイン処理
 		else:
-			analyzer.main(text, "gui")
+			analyzer.tokenizer(text, "gui")
 			s = switch.main()
 			#会話モード
 			if not s:

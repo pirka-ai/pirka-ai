@@ -5,6 +5,7 @@
 #©2019 Mamoru Itoi
 
 #モジュール読み込み
+import CaboCha
 import MeCab
 import pickle
 import re
@@ -13,9 +14,10 @@ import re
 from data import *
 
 tokens = []
+chunks = []
 
 #メイン処理
-def main(text, mode = "normal"):
+def tokenizer(text, mode = "normal"):
 	t = MeCab.Tagger("")
 	t.parse("")
 	m = t.parseToNode(text)
@@ -32,6 +34,22 @@ def main(text, mode = "normal"):
 		if mode == "gui":
 			Log.tokenLog.append(token)
 	return tokens
+
+def dependencyAnalyzer(text, mode="nomal"):
+	c = CaboCha.Parser()
+	tree = c.parse(text)
+	chunks = []
+	t = ""
+	toChunkId = -1
+	if mode == "gui":
+		global chunks
+	for i in range(0, tree.size()):
+		token = tree.token(i)
+		t = token.surface if token.chunk else (t + token.surface)
+		toChunkId = token.chunk.link if token.chunk else toChunkId
+		if i == tree.size() - 1 or tree.token(i+1).chunk:
+			chunks.append({"c" : text, "to" : toChunkId})
+	return chunks
 	
 #起動時に実行する処理
 def start():
